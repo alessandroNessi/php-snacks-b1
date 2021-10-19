@@ -6,12 +6,13 @@ $squadre=populateTeam($nomi,10,90);
 
 //stampo le squadre in html
 for($i=0 ; $i<count($squadre) ; $i++){
-    echo "<p>{$squadre[$i]}</p>";
+    echo "<p>{$squadre[$i]["home_team"]} - {$squadre[$i]["host_team"]} | {$squadre[$i]["home_score"]}-{$squadre[$i]["host_score"]}</p>";
 }
 
 //genero e ritorno l'array con le squadre complete
 function populateTeam($nomi, $min, $max){
     $i=0;
+    $returnIndex=0;
     $positionTaken=[];
     $associatedPos=(int)rand($i+1,count($nomi)-1);
     $returningArray=[];
@@ -19,14 +20,16 @@ function populateTeam($nomi, $min, $max){
         while(in_array($associatedPos, $positionTaken)){
             $associatedPos=(int)rand($i+1,count($nomi)-1);
         }
-        $returningArray[]=$nomi[$i] . " - " . $nomi[$associatedPos] . " | " . strval((int)rand($min,$max)) . "-" .strval((int)rand($min,$max));
+        $returningArray[$returnIndex]=["home_team" => $nomi[$i], "host_team" => $nomi[$associatedPos], "home_score" => strval((int)rand($min,$max)) , "host_score" => strval((int)rand($min,$max))];
         $positionTaken[]=$associatedPos;
         $positionTaken[]=$i;
+        $returnIndex++;
         $i++;
         while(in_array($i, $positionTaken)){
             $i++;
         }
     }
+    var_dump($returningArray);
     return $returningArray;
 }
 ?>
