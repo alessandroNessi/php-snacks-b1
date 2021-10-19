@@ -29,7 +29,6 @@ function populateTeam($nomi, $min, $max){
             $i++;
         }
     }
-    var_dump($returningArray);
     return $returningArray;
 }
 ?>
