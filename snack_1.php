@@ -1,10 +1,11 @@
 <?php 
 $nomi=["cippa","lippa","milano","genova","palermo","firenze","torino","livorno","cosenza","napoli","venezia","bari","roma","biella","mango","banjo","kazooye"];
+
 //passo i nomi da estrapolare, il punteggio minimo e massimo da generare
 $squadre=populateTeam($nomi,10,90);
 
 //stampo le squadre in html
-for($i=0 ; $i < (count($squadre)) ; $i++){
+for($i=0 ; $i<count($squadre) ; $i++){
     echo "<p>{$squadre[$i]}</p>";
 }
 
@@ -26,5 +27,6 @@ function populateTeam($nomi, $min, $max){
             $i++;
         }
     }
+    return $returningArray;
 }
 ?>
