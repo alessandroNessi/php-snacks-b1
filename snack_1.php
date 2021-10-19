@@ -13,8 +13,7 @@ function populateTeam($nomi, $min, $max){
         while(in_array($associatedPos, $positionTaken)){
             $associatedPos=(int)rand($i+1,count($nomi)-1);
         }
-        echo count($returningArray)<((int)(count($nomi)/2));
-        $returningArray[]=$nomi[$i].$nomi[$associatedPos];
+        $returningArray[]=$nomi[$i] . " - " . $nomi[$associatedPos] . " | " . strval((int)rand($min,$max)) . "-" .strval((int)rand($min,$max));
         $positionTaken[]=$associatedPos;
         $positionTaken[]=$i;
         echo var_dump($returningArray);
