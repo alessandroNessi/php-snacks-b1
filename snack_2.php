@@ -4,7 +4,7 @@
         $email=$_GET["email"];
         if(strpos($email,"@")!=false 
         && strpos($email,".")!=false 
-        && strpos($email,"@")<strpos($email,".") 
+        && strpos($email,"@")<strpos($email,".")-1 
         && strpos($email,"@")>0 
         && strpos($email,".")<strlen($email)-1 
         && substr_count($email,"@")<2 
@@ -29,7 +29,7 @@
         <input type="submit" value="Sbumit">
         <?php 
             if($result===true){
-                echo "<h2>Login effettuato con successo, benvenuto {$email}.</h2>";
+                echo "<h2>Login effettuato con successo, benvenuto {$email} .</h2>";
             }elseif($result===false){
                 echo "<h2>L'indirizzo di posta elettronica {$email} inserito non risulta corretto, ti preghiamo di inserire un indirizzo e-mail valido.</h2>";
             }
