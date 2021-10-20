@@ -37,11 +37,6 @@
             ]
         ],
     ];
-    // foreach ($posts as $date => $blogs){
-    //     foreach($blogs as $blog){
-
-    //     }
-    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,14 +52,12 @@
         <?php foreach($posts as $date => $blogs){
             echo ("<li>{$date}</li><ul>");
                 foreach($blogs as $blog){
-                    echo ("<ul>");
                     foreach($blog as $key => $value){
-                        // echo("<li><h3>{$value}</h3></li>");
-                        echo("<li><h3>{$value}</h3></li>");
-                    }   
-                    echo ("</ul>");
+                        echo("<p><strong>{$key}</strong>: {$value}</p>");
+                    }
+                    echo("****************************************************");
                 }
-            echo ("</ul>");
+            echo ("</ul><hr>");
         }
         ?>
     </ul>
