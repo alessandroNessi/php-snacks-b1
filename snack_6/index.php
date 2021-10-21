@@ -36,7 +36,7 @@
         foreach($db as $label => $objects){
             echo "<div class='{$label}'>";
             foreach($objects as $person){
-                echo "<p>{$person['name']} {$person['lastname']}</p>";
+                echo "<p>{$person['name']}: {$person['lastname']}</p>";
             }
             echo "</div>";
         }
