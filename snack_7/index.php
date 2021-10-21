@@ -1,13 +1,5 @@
 <?php
     include __DIR__ . '/data/data.php';
-    function mediaVoti($array){
-        $media=0;
-        foreach($array as $element){
-            $media+=$element;
-        }
-        $media/=count($array);
-        return $media;
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

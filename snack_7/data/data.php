@@ -1,4 +1,4 @@
-<?php 
+<?php
     $classe40=[
         [
             "nome"=> "alessandro",
@@ -31,4 +31,5 @@
             "voti"=> [1,2,3,4,5],
         ],
     ];
+    include __DIR__.'/functions.php';
 ?>
